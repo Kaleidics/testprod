@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Post from '../components/post';
-const dotenv = require('dotenv');
-dotenv.config();
+
 
 const client = require('contentful').createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
