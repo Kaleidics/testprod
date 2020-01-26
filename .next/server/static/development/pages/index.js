@@ -187,6 +187,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/post */ "./components/post.js");
+/* harmony import */ var next_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/config */ "next/config");
+/* harmony import */ var next_config__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_config__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "C:\\Users\\Eddie\\Documents\\GitHub\\tuts-nextjs\\netnext\\pages\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -194,9 +196,19 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+const {
+  publicRuntimeConfig
+} = next_config__WEBPACK_IMPORTED_MODULE_3___default()();
+const {
+  CONTENTFUL_SPACE_ID,
+  CONTENTFUL_ACCESS_TOKEN
+} = publicRuntimeConfig;
+const DEV_SPACE = process.env.CONTENTFUL_SPACE_ID_DEV;
+const DEV_ACCESS = "SExRELSl5hRWLsh3USyHjv60GDz9obiRa0p2XvHhHSE";
+
 const client = __webpack_require__(/*! contentful */ "contentful").createClient({
-  space: '0iiyikmirmao',
-  accessToken: 'SExRELSl5hRWLsh3USyHjv60GDz9obiRa0p2XvHhHSE'
+  space: CONTENTFUL_SPACE_ID || DEV_SPACE,
+  accessToken: CONTENTFUL_ACCESS_TOKEN || DEV_ACCESS
 });
 
 function HomePage() {
@@ -221,13 +233,13 @@ function HomePage() {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 36
     },
     __self: this
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 37
     },
     __self: this
   }, "Next.js + Contentful"), __jsx("link", {
@@ -236,7 +248,7 @@ function HomePage() {
     type: "text/css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 38
     },
     __self: this
   })), posts.length > 0 ? posts.map(p => __jsx(_components_post__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -248,7 +260,7 @@ function HomePage() {
     url: p.fields.url,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 42
     },
     __self: this
   })) : null);
@@ -278,6 +290,17 @@ module.exports = __webpack_require__(/*! C:\Users\Eddie\Documents\GitHub\tuts-ne
 /***/ (function(module, exports) {
 
 module.exports = require("contentful");
+
+/***/ }),
+
+/***/ "next/config":
+/*!******************************!*\
+  !*** external "next/config" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/config");
 
 /***/ }),
 
