@@ -2561,7 +2561,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(qs__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var lodash_isPlainObject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isPlainObject */ "./node_modules/lodash/isPlainObject.js");
 /* harmony import */ var lodash_isPlainObject__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isPlainObject__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! os */ 2);
+/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! os */ 3);
 /* harmony import */ var os__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(os__WEBPACK_IMPORTED_MODULE_3__);
 
 
@@ -11324,36 +11324,6 @@ exports["default"] = Head;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/next-server/lib/runtime-config.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/next/dist/next-server/lib/runtime-config.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
-
-_Object$defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var runtimeConfig;
-
-exports["default"] = function () {
-  return runtimeConfig;
-};
-
-function setConfig(configValue) {
-  runtimeConfig = configValue;
-}
-
-exports.setConfig = setConfig;
-
-/***/ }),
-
 /***/ "./node_modules/next/dist/next-server/lib/side-effect.js":
 /*!***************************************************************!*\
   !*** ./node_modules/next/dist/next-server/lib/side-effect.js ***!
@@ -14033,7 +14003,7 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
@@ -14041,8 +14011,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_post__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/post */ "./components/post.js");
-/* harmony import */ var next_config__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/config */ "./node_modules/next/dist/next-server/lib/runtime-config.js");
-/* harmony import */ var next_config__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_config__WEBPACK_IMPORTED_MODULE_5__);
 
 
 var _jsxFileName = "C:\\Users\\Eddie\\Documents\\GitHub\\tuts-nextjs\\netnext\\pages\\index.js";
@@ -14051,19 +14019,12 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 
-
-
-var _getConfig = next_config__WEBPACK_IMPORTED_MODULE_5___default()(),
-    publicRuntimeConfig = _getConfig.publicRuntimeConfig;
-
-var CONTENTFUL_SPACE_ID = publicRuntimeConfig.CONTENTFUL_SPACE_ID,
-    CONTENTFUL_ACCESS_TOKEN = publicRuntimeConfig.CONTENTFUL_ACCESS_TOKEN;
-var DEV_SPACE = process.env.CONTENTFUL_SPACE_ID_DEV;
-var DEV_ACCESS = "SExRELSl5hRWLsh3USyHjv60GDz9obiRa0p2XvHhHSE";
+var SPACE = "0iiyikmirmao";
+var ACCESS = "SExRELSl5hRWLsh3USyHjv60GDz9obiRa0p2XvHhHSE";
 
 var client = __webpack_require__(/*! contentful */ "./node_modules/contentful/dist/es-modules/contentful.js").createClient({
-  space: CONTENTFUL_SPACE_ID || DEV_SPACE,
-  accessToken: CONTENTFUL_ACCESS_TOKEN || DEV_ACCESS
+  space: SPACE,
+  accessToken: ACCESS
 });
 
 function HomePage() {
@@ -14128,13 +14089,13 @@ function HomePage() {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 32
     },
     __self: this
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 33
     },
     __self: this
   }, "Next.js + Contentful"), __jsx("link", {
@@ -14143,7 +14104,7 @@ function HomePage() {
     type: "text/css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 34
     },
     __self: this
   })), posts.length > 0 ? posts.map(function (p) {
@@ -14156,7 +14117,7 @@ function HomePage() {
       url: p.fields.url,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 38
       },
       __self: this
     });
@@ -14164,11 +14125,10 @@ function HomePage() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (HomePage);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*****************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CEddie%5CDocuments%5CGitHub%5Ctuts-nextjs%5Cnetnext%5Cpages%5Cindex.js ***!
   \*****************************************************************************************************************************************************/
@@ -14180,7 +14140,7 @@ module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absol
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!********************!*\
   !*** os (ignored) ***!
   \********************/
@@ -14202,5 +14162,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

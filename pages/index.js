@@ -1,17 +1,13 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Post from '../components/post';
-import getConfig from 'next/config';
 
-const { publicRuntimeConfig } = getConfig();
-const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = publicRuntimeConfig;
-
-const DEV_SPACE = process.env.CONTENTFUL_SPACE_ID_DEV;
-const DEV_ACCESS = process.env.CONTENTFUL_ACCESS_TOKEN;
+const SPACE = process.env.CONTENTFUL_SPACE_ID;
+const ACCESS = process.env.CONTENTFUL_ACCESS_TOKEN;
 
 const client = require('contentful').createClient({
-    space: CONTENTFUL_SPACE_ID || DEV_SPACE,
-    accessToken: CONTENTFUL_ACCESS_TOKEN || DEV_ACCESS
+    space: SPACE,
+    accessToken: ACCESS
 });
 
 function HomePage() {
